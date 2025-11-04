@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(77, 124, 124);
+    justify-items: center;
+    
+}
+ .container{
+    margin-top: 5vh;
+     height: 53vh;
+     width: 80vh;
+     display: flex;
+     justify-content: center;
+     background-color: rgb(11, 66, 66);
+     border-radius: 10px;
+
+ }
+ .form-group{
+    margin-top: 5vh;
+    
+ }
+ .form-control{
+    height:auto;
+    width: 70vh;
+    margin: 10px;
+ }
+#recipe,#ingrediant,#catagory,#search{
+    margin: 10px;
+     height:4vh;
+    width: 70vh;    
+    border-radius: 5px;
+    text-align: left;
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 4vh;
+    width: 16vh;
+    background-color:rgb(119,167,178);
+    border-radius: 7px;
+}
+.table-list{
+    margin-top: 20px;
+    height: auto;
+    width: auto;
+    background-color: rgb(8, 56, 40);
+    border-radius: 10px;
+    flex-wrap: wrap;
+        justify-content: center;
+
+}
+table,th,td{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 1%; 
+    height: auto;
+    width: auto;
+    color: rgb(5, 7, 8);
+}
+#up-btn{
+    display: none;
+}
+.btn1{
+     margin-top: 10px;
+    margin-left: 10px;
+    height: 4vh;
+    width: 16vh;
+    background-color:rgb(244, 4, 4);
+    border-radius: 7px;
+
+}
+.btn2{
+     margin-top: 10px;
+    margin-left: 10px;
+    height: 4vh;
+    width: 16vh;
+    background-color:rgb(15, 18, 212);
+    border-radius: 7px;
+}
+@media (max-width:1024){
+       .container{
+            flex-direction: column;
+            height: auto;
+            width: auto;
+            justify-content: center;
+       }
+}
+@media (max-width:400){
+       .body{
+            flex-direction: column;
+       }
+}

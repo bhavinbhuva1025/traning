@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    padding: 30px 40px;
+    width: 90vh;
+    height: 30vh;
+    border: 2px;
+}
+
+.form-group {
+        height: 50vmin;
+        width: 70vh;
+        margin: auto;
+    
+}
+.formcontainer{
+        margin-top: 15vh;
+        background : #d6d2d2;
+        border-radius: 8px;
+        padding: 30px;
+
+}
+.un{
+     display: flex;
+        flex-direction: column;
+        margin: 5px;
+}
+.em{
+     display: flex;
+        flex-direction: column;
+        margin: 5px;
+
+
+}.ps{
+     display: flex;
+        flex-direction: column;
+        margin: 5px;
+
+}
+.reps{
+     display: flex;
+        flex-direction: column;
+        margin: 5px;
+
+}
+.ch{
+        margin-top: 10px;
+        margin-left: 5px;
+        display: flex;
+        flex-wrap: wrap;
+
+}
+.btn{
+     display: flex;
+     margin: 10px;   
+
+}
+#btn{
+    height: 4vh;
+    width: 16vh;
+}
+h4{
+    margin-bottom: 20px;
+    text-align: center ;
+}
+#check{
+    display: flex;
+    align-items: center;
+}
+.lb{
+    padding-left: 10px;
+}
+.err{
+    color: red;
+}
+#err-name{
+    display: none;
+}
+#err-email{
+    display: none;
+}
+#err-pass{
+    display: none;
+}
+#err-repass{
+    display: none;
+}
+#err-check{
+    display: none;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipe Managment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+             <form id="form"> <!--onsubmit="addrecipe(event)"-->
+            <div class="form-control">
+                <label class="form-label">Recipe Name :</label>
+                <input type="text" id="recipe" placeholder="   Enter Recipe Name..." required>
+            </div>
+            <div class="form-control">
+                <label class="form-label">Recipe Ingrediant :</label>
+                <input type="text" id="ingrediant"  placeholder="   Enter Recipe Ingerdiant..." required>
+            </div>
+            <div class="form-control">
+                <label class="form-label">Recipe Catagory</label>
+                <input type="text"  id="catagory" placeholder="   Enter Recipe Catagory..." required >
+                </div>
+            <div class="btn-add">
+                <button class="btn" type="submit" id="ad-btn" onclick="addrecipe(event)"><b>Add Recipe</b></button>
+                <button class="btn" type="submit" id="up-btn" onclick="updaterecipe(event)"><b>Update Recipe</b></button>
+
+            </div>
+            </form>
+        </div>
+    </div>
+    
+     <div class="table-list">
+         <div class="form-control">
+                <input type="text" id="search" placeholder="   Search Recipe Item" required>
+            </div>
+            <table class="table">
+                        <thead>
+                            <tr>
+                            <th>Recipe Name</th>
+                            <th>Recipe Ingrediant </th>
+                            <th>Recipe Catagory</th>
+                            <th>Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+            </table>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html> 
+
+
+
+
+
+

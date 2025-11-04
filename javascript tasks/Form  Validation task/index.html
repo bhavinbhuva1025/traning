@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form validation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formcontainer">
+            <form id="form-group">
+                <div class="input-group">
+                    <h4> Registration form</h4>
+                    <div class="un">
+                          <label>Name :</label>
+                        <input type="text" name="uname" id="name" >
+                        <p class="err" id="err-name">User Name is Required</p>
+                    </div>
+                    <div class="em">
+                        <label>E-Mail :</label>
+                        <input type="email" name="uemail" id="email" >
+                       <p class="err" id="err-email">User E-mail is Required</p>
+
+                    </div>
+                    <div class="ps">      
+                        <label>Password :</label>
+                        <input type="password" name="upass" id="pass">
+                        <p class="err" id="err-pass">User Password is Required</p>
+
+                    </div>
+                    <div class="reps">
+                        <label>Re-enter Password :</label>
+                        <input type="password" name="re-upass" id="re-pass">
+                        <p class="err"  id="err-repass">User Confrim Password is Required</p>
+
+                    </div>
+                    <div class="ch" id="check">
+                        <input type="checkbox" class="ck" >
+                        <label for=""class="lb"> i accept the terms and condition </label><br>
+                       <p class="err" id="err-check">Terms and Conditions are not checked</p>
+
+
+                    </div>
+                    <div class="btn">
+                        <button type="submit" id="btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

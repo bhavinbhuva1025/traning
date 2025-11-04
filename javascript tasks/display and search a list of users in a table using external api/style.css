@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    margin-bottom: 3px;
+    text-align: center;
+    border: 2px solid black;
+    height: auto;
+}
+.container{
+    margin: 20vh;
+    border: 2px solid black;
+}
+th,td{
+    border: 2px solid black;
+}
+.search-bar{
+    margin-bottom: 1px;
+    border: 2px solid black;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+}
+#search{
+    width: 114vh;
+}

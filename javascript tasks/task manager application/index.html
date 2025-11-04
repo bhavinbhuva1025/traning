@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task Manager Application</title>
+</head>
+<body>
+    <div class="container">
+        <div class="ad-task">
+           
+                <form class="formcontainer" onsubmit="add(event)">
+                     <div class="form-group">
+                    <label for="ad-task"id="lb">Task Dafination :</label>
+                    <input type="text" name="ad-task" id="ad-task">
+                    <label for="task-discription" id="lb">Task Discription :</label>
+                    <textarea name="task-discription" id="task-discription"></textarea>
+                    <button type="submit" id="btn" >Add task</button>
+                    </div>
+                </form>
+            
+        </div>
+        <div class="table-group">
+               <table class="table">
+               <thead>
+                            <tr>
+                                <th>ID</th>
+                            <th>Task Defination</th>
+                            <th>Task Discription </th>
+                            <th>Task Status</th>
+                            <th id="ac">Action</th>
+                            </tr>
+                        </thead>
+
+                        
+                        <tbody>
+                            
+                        </tbody>
+               </table>
+            
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+</html>

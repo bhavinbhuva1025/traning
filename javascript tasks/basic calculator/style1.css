@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator {
+    width: 320px;
+    background-color: #282c34;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    background-color: #c9d2ce;  
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 2.5em;
+    text-align: right; 
+    color: #333;
+    outline: none;
+    overflow-x: auto; 
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+}
+.calculator-buttons button {
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: #444; 
+    color: #e0e0e0; 
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.calculator-buttons button:hover {
+    background-color: #555;
+}
+
+.calculator-buttons button:active {
+    background-color: #333;
+    transform: scale(0.98);
+}
+.operator {
+    background-color: #ff9500; 
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #fca729;
+}
+
+/* Special styling for the 'Clear' button */
+.clear {
+    background-color: #eb2217; /* Red for the clear button */
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #fa1b0f;
+}
+
+
+.equals{
+    background-color: #007aff; 
+    color: #fff;
+    height: auto; 
+}
+
+.equals:hover {
+    background-color: #2f8cff;
+}
+
+.wide {
+    grid-column: span 3; 
+}
+

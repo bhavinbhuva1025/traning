@@ -1,0 +1,31 @@
+.container{
+    height: 70vmin;
+    width: 100vmin;
+    margin-top: 10vmin;
+    align-items: center;
+
+}
+h3{
+    margin-top: 5vmin;
+    text-align: center;
+    color: #200e0e;
+     border: 1px solid black;
+    border-radius: 5px;
+}
+ul{
+    margin-left: 0vmin;
+    list-style-type: none;
+}
+li{
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+    align-content: center;
+}
+.ul-list{
+     border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px ;
+    margin-top: 10px;
+}

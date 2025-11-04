@@ -1,0 +1,20 @@
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+#btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
