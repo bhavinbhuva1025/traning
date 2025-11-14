@@ -1,0 +1,318 @@
+Sentence  :-	solve without using built in methods like .reverse() and build own logic, using for   loop and if else block.
+
+
+
+Longest Palindromic Substring – Find the longest substring which is a palindrome:-	impliment a pairwise logic in longest palindrome sentence finding a longest 
+palindrooe substring.
+
+
+Fibonacci with Memoization  – Implement recursive + optimized Fibonacci.:-	impliment for loop and if condition for stoping loop,
+ also using temporary variable for swaping two values, use also recursion function.
+
+
+"Find Missing Number – Array contains 1...n, one number missing, find it.:-"	given an array of numbers and give pass argunents from and to,
+it's find missing number by given argument from and to.
+
+Sort by Frequency – Sort array elements by frequency of occurrence.	:-"solve by using nested array and nested for loop of an numbers frequency array.
+1) convert normal array to object with each element frequency.
+2) convert frequency object to nested array without using built in methods.
+3) sort an nested array and use nested for loop to push the each element in final result array."
+
+
+Find First Non-Repeating Character – Return first unique char in a string.:-	First of all add frequency of an each string characters.
+ after check which character have 1 only count on object using for...of loop.
+
+
+Find First Non-Repeating Element– Return first unique element in a array.:-	First of all add frequency of an each element of array.
+ after check which element have 1 only count on object using for...of loop.\
+
+
+Longest Palindromic Substring – Find the longest substring which is a palindrome :-	impliment a pairwise logic in longest palindrome sentence 
+finding a longest palindrooe substring.
+
+
+Find the subarray with the maximum sum.	:-First of all sum of each sub array and push in new array after that using one more time for loop find the biggest element in array.
+
+
+Merge two sorted arrays without using .sort().:-	First of all push both array in one array after that sort it using for loop and if...else condition.
+
+Count vowels and consonants in a string.:-	use only for loop and basic if condition.
+
+Longest substring without repeating characters.:-	split the string and using nested for loop.
+
+Check if one string is a rotation of another.	:-solve using basic logic with for loop.
+
+Check if two strings are anagrams.:-	use basic for loop and change a orignal string.
+
+Implement Bubble Sort.	:-solve using nested for loop and swapping array value using temporary variable.
+
+Implement Selection Sort.	:-also solve like bubble sort but use the selection algorithm.
+
+Implement Insertion Sort.:-	solve using for loop and inside a for loop add a while loop, and inserting a value in diffrent diffrent array positions.
+
+Implement Quick Sort.:-	select an pivot value and make a partition of an array using for loop and swapping value than sort it.
+
+Implement Merge Sort.	:-solve using multiple while loop and make a multiple partition of an array and after that swap and merge it.
+
+
+
+
+
+Perfect 👍
+Here’s the **complete theory with detailed logic explanation** (step-by-step reasoning) for all **20 programming tasks**, using **for loops, if–else, recursion, and temporary variables** — without using any built-in shortcuts like `.reverse()` or `.sort()`.
+
+---
+
+## **1️⃣ Longest Palindromic Substring (pairwise logic)**
+
+**Logic / Theory:**
+
+* A palindrome is a string that reads the same forward and backward.
+* Use **two loops**:
+
+  * Outer loop → start index of substring.
+  * Inner loop → end index of substring.
+* For each substring, use another loop to compare **first and last characters** moving inward.
+* If all characters match → it’s a palindrome.
+* Keep track of the **longest palindrome** using variables for `maxLength` and `longestString`.
+* Update them whenever a longer palindrome is found.
+
+---
+
+## **2️⃣ Fibonacci with Memoization (recursive + optimized)**
+
+**Logic / Theory:**
+
+* Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, ...
+* Use recursion:
+
+  * Base condition → if `n == 0 or n == 1`, return `n`.
+* Use a **temporary memory object (memo)** to store results of previously calculated Fibonacci numbers.
+* Before calling recursion, check if value already exists in memo.
+* If yes, use it; else, calculate and store it.
+* Can also use **temporary variables** to swap or hold intermediate values.
+* This prevents recalculating and makes recursion efficient.
+
+---
+
+## **3️⃣ Find Missing Number (1 to n)**
+
+**Logic / Theory:**
+
+* Array contains numbers from 1 to n but one number is missing.
+* Use a **for loop** from `1` to `n`.
+* For each number, use another loop to check if that number exists in array.  
+* If not found, that’s the missing number.
+* Alternatively, compute **expected sum** using formula `n*(n+1)/2` and subtract actual array sum found using loop.
+
+--- 
+
+## **4️⃣ Sort by Frequency**
+
+**Logic / Theory:**
+
+1. Count frequency of each element manually using **for loop** → store in an object `{element: count}`.
+2. Convert that frequency object into a **nested array** manually: `[[element, count], ...]`.
+3. Use **nested for loops** and **if...else** to sort nested array based on frequency count (descending order).
+4. Use another loop to push each element into a new array according to its frequency count.
+
+---
+
+## **5️⃣ Find First Non-Repeating Character (string)**
+
+**Logic / Theory:**
+
+* Use **for loop** to count occurrences of every character in an object.
+* Then use a second **for...of** loop on the string to check which character’s count equals 1.
+* The first one that matches is the non-repeating character.
+
+--- 
+
+## **6️⃣ Find First Non-Repeating Element (array)**
+
+**Logic / Theory:**
+
+* Same idea as above, but for array elements.
+* Count frequency using **for loop**.
+* Then use **for...of** loop to find the first element whose count is 1.
+* Return that element as the result.
+
+---
+
+## **7️⃣ Longest Palindromic Substring (repeat)**
+
+**Logic / Theory:**
+
+* Same as Task 1.
+* Use pairwise substring checking by expanding around each character and checking symmetry.
+
+---
+
+## **8️⃣ Find Subarray with Maximum Sum (Brute Force)**
+
+**Logic / Theory:**
+
+* Use **two loops**:
+
+  * Outer → start index of subarray.
+  * Inner → end index of subarray.
+* Sum elements between start and end using a loop.
+* Store each sum in a temporary array.
+* After all sums calculated, use one more loop to find the **maximum sum** from that array.
+* This gives the maximum sum subarray.
+
+---
+
+## **9️⃣ Merge Two Sorted Arrays (without .sort())**
+
+**Logic / Theory:**
+
+* Take two sorted arrays.
+* Combine them into a single array using a loop.
+* Then apply a **manual sorting** method:
+
+  * Use nested **for loops** and **if condition** to compare elements.
+  * Swap them using a **temporary variable** if out of order.
+* After all passes, merged array will be sorted.
+
+---
+
+## **1️⃣0️⃣ Count Vowels and Consonants**
+
+**Logic / Theory:**
+
+* Define vowels as ‘a, e, i, o, u’.
+* Loop through each character in string.
+* Use **if...else**:
+
+  * If character is vowel → increase vowel count.
+  * Else if it’s a letter → increase consonant count.
+* Ignore spaces and punctuation.
+
+---
+
+## **1️⃣1️⃣ Longest Substring Without Repeating Characters**
+
+**Logic / Theory:**
+
+* Use nested loops:
+
+  * Outer loop for start of substring.
+  * Inner loop to expand substring until a repeated character appears.  
+* Use an object to keep track of seen characters.
+* When repetition occurs, stop and record length of substring.
+* Keep track of **longest substring length** and the substring itself.
+
+---
+
+## **1️⃣2️⃣ Check if One String is a Rotation of Another**
+
+**Logic / Theory:**
+
+* First check if both strings have the same length.
+* Use a loop to rotate one string manually:
+
+  * Move first character to end and compare with second string.
+* Repeat this for all positions using **for loop**.
+* If any rotation matches, strings are rotations of each other.
+
+---
+
+## **1️⃣3️⃣ Check if Two Strings are Anagrams**
+
+**Logic / Theory:**
+
+* Anagrams have same characters with same frequencies.
+* Count frequency of each character in both strings using **for loop**.
+* Compare both frequency objects using another loop.
+* If all characters and counts match → they are anagrams.
+
+---
+
+## **1️⃣4️⃣ Implement Bubble Sort**
+
+**Logic / Theory:**
+
+* Use **two nested loops**.
+* Compare adjacent elements.
+* If first > second, swap them using a **temporary variable**.
+* Repeat passes until no swaps needed.
+* This gradually “bubbles up” largest elements to the end.
+
+---                 
+
+## **1️⃣5️⃣ Implement Selection Sort**
+
+**Logic / Theory:**
+
+* Outer loop → assume current index is smallest.
+* Inner loop → find smallest element in remaining array.
+* Swap it with current index using **temporary variable**.
+* Continue until all elements sorted.
+
+---
+
+## **1️⃣6️⃣ Implement Insertion Sort**
+
+**Logic / Theory:**
+
+* Start from second element, treat first as sorted.
+* Pick the current element, move backward comparing with sorted part.
+* Use **while loop** to shift larger elements one position ahead.
+* Insert current element in correct place.
+* Repeat for all elements.
+
+---
+
+## **1️⃣7️⃣ Implement Quick Sort**
+
+**Logic / Theory:**
+
+* Select one element as **pivot**.
+* Use **for loop** to partition elements:
+
+  * Smaller than pivot → left side.
+  * Larger → right side.
+* Recursively apply same logic to both partitions.
+* Merge all results for final sorted array.
+
+---
+
+## **1️⃣8️⃣ Implement Merge Sort**
+
+**Logic / Theory:**
+
+* Divide the array into halves until single elements remain.
+* Use **while loops** to merge two halves by comparing smallest elements.
+* Keep inserting the smaller element into a new array.
+* Continue merging until one fully sorted array remains.
+
+---
+
+## **1️⃣9️⃣ Find Missing Number (Sum Logic)**
+
+**Logic / Theory:**
+
+* Calculate expected sum = `n*(n+1)/2`.
+* Use **for loop** to find actual sum of given array.
+* Missing number = expected sum - actual sum.
+* No built-in functions used, only loops and arithmetic.
+
+---
+
+## **2️⃣0️⃣ General Common Pattern / Algorithm Logic**
+
+**Logic / Theory Summary:**
+
+* Every problem follows these fundamental programming logics:
+
+  1. Use **for / while loops** to iterate.
+  2. Use **if...else** for comparisons and decisions.
+  3. Use **temporary variables** for swapping, storing, or tracking.
+  4. Avoid built-ins like `.sort()`, `.reverse()`, `.indexOf()`.
+  5. Use **basic recursion** or **pairwise checking** for complex structures.
+* This helps in understanding pure algorithm logic behind each problem.
+
+---
+
+Would you like me to make a **single combined summarized sheet (ready for study / revision)** for these 20 topics — short, one-line logic per problem (for quick reference before exams or interviews)?
