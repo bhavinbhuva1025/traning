@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +21,6 @@
     <script src="script2.js"></script>
 </body>
 </html>
-
-
 let folderid=0;
 let folders = JSON.parse(localStorage.getItem("folder"))||[];
 
@@ -55,37 +54,33 @@ function addfolder(){
     localStorage.setItem("folder", JSON.stringify(folders));
         
     }
-    function editfolder(folderid){
-        let folder =folders.filter(f =>f.id === folderid);
-        let newname= prompt("enter new name", folder.name);
-        if(!newname) return;
-        folder.name=newname.trim();
-        savefolder();
-        showfolder();
-    }
+  function editfolder(parentId) {
+    let folder = folders.find(f => f.id === parentId);
+    let newName = prompt("Enter new name:", folder.name);
+    if (!newName) return;
+    folder.name = newName.trim();
+    savefolder();
+    showfolder();
+}
 
-    function folder(parentId) {
+    function showfolder(){
         let div =document.querySelector("#current");
         let html="";
-    folders.filter(f => f.parentId === parentId).forEach(f => {
-      html +="<ul>"
-             html +=`<li> 📁 ${f.name} <button id="subadd" onclick="addsubfolder(${f.id})">add</button>
-              <button id="edit" onclick="editfolder(${f.id})">edit</button></li>`;
+          folders.filter(f => f.id === folderid),folders.forEach(function(folder){
+      
+            html +="<ul>"
+             html +=`<li> 📁 ${folder.name} <button id="subadd" onclick="addsubfolder(${folder.id})">add</button>
+              <button id="edit" onclick="editfolder(${folder.id})">edit</button></li>`;
             html +="</ul>"
-        folder(f.id)
+        
     }); 
         div.innerHTML = html;
 
-}
+    }
+document.onload=showfolder();
 
-function showfolder() {
-    const div = document.getElementById("current");
-    folder(null); 
-}
 
-showfolder();
-
-*{
+ *{
     margin: 0;
     padding: 0;
 }
@@ -120,11 +115,10 @@ h1{
 #edit{
      height: 20px;
     width: 40px;
-}
+} 
 
+ 
 
-
-    
 
 
 
