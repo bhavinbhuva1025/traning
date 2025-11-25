@@ -17,8 +17,7 @@ function addfolder(){
         }
             folders.push(newfolder);
 
-    localStorage.setItem("folder", JSON.stringify(folders));
-
+        localStorage.setItem("folder", JSON.stringify(folders));
         document.getElementById('folder-texbox').value="";
     showfolder();
 }
@@ -34,11 +33,6 @@ function addsubfolder(parentid){
         showfolder();
 }
 
-function savefolder() {
-    localStorage.setItem("folder", JSON.stringify(folders));
-        
-}
-
 function editfolder(parentId) {
     let folder = folders.find(f => f.id === parentId);
     let newName = prompt("Enter new name:", folder.name);
@@ -51,21 +45,38 @@ function editfolder(parentId) {
     showfolder();
 }
 
+function deletefolder(parentId){
+    let deletefolder=JSON.parse(localStorage.getItem("folder"))
+    let vel=deletefolder.find(f=> f.id === parentId);
+    console.log("🚀 ~ deletefolder ~ vel:", vel);
+   let del= deletefolder.splice(parentId,1)
+    console.log("🚀 ~ deletefolder ~ del:", del);
+    savefolder();
+    showfolder();
+}
+
+function savefolder() {
+    localStorage.setItem("folder", JSON.stringify(folders));
+}
+
 function folderview(parentId){
         let html="";
     let view = folders.filter(f => f.parentid === parentId);
     if (view.length === 0) return "";
             html +="<ul>"
           view.forEach(folder=>{
-             html +=`<li> 📁 ${folder.name}<button id="subadd" onclick="addsubfolder(${folder.id})">add</button>
-              <button id="edit" onclick="editfolder(${folder.id})">edit</button></li>`;
-             html += folderview(folder.id)
+             html +=`<li>
+            <div class="folder">📁 ${folder.name}
+                <button class="btn" onclick="addsubfolder(${folder.id})">Add</button>
+                <button class="btn" onclick="editfolder(${folder.id})">Edit</button>
+                <button class="btn" onclick="deletefolder(${folder.id})">Delete</button>
+            </div>
+            ${folderview(folder.id)}
+            </li>`;
              }); 
 
             html +="</ul>"
-
             return html;
-    
 }
 function showfolder(){
         let div =document.querySelector("#current");
