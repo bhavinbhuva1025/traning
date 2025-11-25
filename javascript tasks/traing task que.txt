@@ -63,21 +63,28 @@ function addfolder(){
     showfolder();
 }
 
-    function showfolder(){
-        let div =document.querySelector("#current");
+  function folderview(parentId){
         let html="";
-          folders.filter(f => f.id === folderid),folders.forEach(function(folder){
-      
+    let view = folders.filter(f => f.parentid === parentId);
+    if (view.length === 0) return "";
             html +="<ul>"
-             html +=`<li> 📁 ${folder.name} <button id="subadd" onclick="addsubfolder(${folder.id})">add</button>
+          view.forEach(folder=>{
+             html +=`<li> 📁 ${folder.name}<button id="subadd" onclick="addsubfolder(${folder.id})">add</button>
               <button id="edit" onclick="editfolder(${folder.id})">edit</button></li>`;
-            html +="</ul>"
-        
-    }); 
-        div.innerHTML = html;
+             html += folderview(folder.id)
+             }); 
 
-    }
+            html +="</ul>"
+
+            return html;
+    
+}
+function showfolder(){
+        let div =document.querySelector("#current");
+        div.innerHTML=folderview(null);
+}
 document.onload=showfolder();
+
 
 
  *{
@@ -123,3 +130,4 @@ h1{
 
 
     
+
