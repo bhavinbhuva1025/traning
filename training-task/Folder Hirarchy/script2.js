@@ -45,12 +45,12 @@ function editfolder(parentId) {
     showfolder();
 }
 
-function deletefolder(parentId){
-    let deletefolder=JSON.parse(localStorage.getItem("folder"))
-    let vel=deletefolder.find(f=> f.id === parentId);
-    console.log("🚀 ~ deletefolder ~ vel:", vel);
-   let del= deletefolder.splice(parentId,1)
-    console.log("🚀 ~ deletefolder ~ del:", del);
+function deletefolder(folderId){
+   let index= folders.findIndex(f=> f.id === folderId);
+  let del= folders.splice(index,1)
+  if (del){ 
+    alert("Delete folder successful")
+  }
     savefolder();
     showfolder();
 }
@@ -85,3 +85,4 @@ function showfolder(){
 document.onload=showfolder();
 
     
+
