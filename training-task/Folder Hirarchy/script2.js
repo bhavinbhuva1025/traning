@@ -46,15 +46,22 @@ function editfolder(parentId) {
 }
 
 function deletefolder(folderId){
+    let subchild=folders.some(f => f.parentid === folderId);
+    if(subchild){
+        alert("Delete First all sub folder then delete main folder")
+        return;
+    }
    let index= folders.findIndex(f=> f.id === folderId);
-  let del= folders.splice(index,1)
-  if (del){ 
-    alert("Delete folder successful")
+   if(index !== -1){
+      let del= folders.splice(index,1)
+      if (del){ 
+        alert("Delete folder successful")
+      }
   }
+
     savefolder();
     showfolder();
 }
-
 function savefolder() {
     localStorage.setItem("folder", JSON.stringify(folders));
 }
@@ -85,4 +92,5 @@ function showfolder(){
 document.onload=showfolder();
 
     
+
 
