@@ -38,91 +38,99 @@
 </html>
 
 
+function register(event) {
+    event.preventDefault(); // stop form submit
 
-let uname = document.querySelector(".name").value;
-let email = document.querySelector(".email").value;
-let pass = document.querySelector(".pass").value;
-let repass = document.querySelector(".re-pass").value;
+    let uname = document.querySelector(".name").value.trim();
+    let email = document.querySelector(".email").value.trim();
+    let pass = document.querySelector(".pass").value.trim();
+    let repass = document.querySelector(".re-pass").value.trim();
 
-let errname = document.querySelector("#err-name");
-let erremail = document.querySelector("#err-email");
-let errpass = document.querySelector("#err-pass");
-let errrepass = document.querySelector("#err-repass");
+    let errname = document.querySelector("#err-name");
+    let erremail = document.querySelector("#err-email");
+    let errpass = document.querySelector("#err-pass");
+    let errrepass = document.querySelector("#err-repass");
 
-function errormsesage(){
-var em_error=  /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    if(uname.trim() === "" || uname == "null")
-    {
-        errname.style.display="block"
-    }
-    else
-    {
-        errname.style.display="none"
+    let valid = true;
 
+    // Name Validation
+    if (uname === "") {
+        errname.style.display = "block";
+        valid = false;
+    } else {
+        errname.style.display = "none";
     }
-    if(email == "")
-    {
-        erremail.style.display="block"
-    }
-    else if(email == email.match(em_error))
-    {
-        erremail.style.display="none"
-    }
-    else
-    {
-        erremail.style.display="none"
 
+    // Email Validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        erremail.innerHTML = "Email is required";
+        erremail.style.display = "block";
+        valid = false;
     }
-     if(pass.trim() === "" || pass.value == null)
-     {
-        errpass.style.display="block"    
-     }
-    else
-    {
-      errpass.style.display="none"
-        
+    else if (!emailPattern.test(email)) {
+        erremail.innerHTML = "Invalid Email Format";
+        erremail.style.display = "block";
+        valid = false;
     }
-    if( repass.trim() === "")
-     {
-        errrepass.style.display="block"    
-     }
-     else if(pass !== repass){
-        errrepass.innerHTML="User confrim Password is not Match in User Password Please Enter Correct Password "
-     }
-    else
-    {
-      errrepass.style.display="none"
-        
+    else {
+        erremail.style.display = "none";
     }
+
+    // Password Validation
+    if (pass === "") {
+        errpass.style.display = "block";
+        valid = false;
+    } else {
+        errpass.style.display = "none";
+    }
+
+    // Confirm Password Validation
+    if (repass === "") {
+        errrepass.innerHTML = "Confirm Password is required";
+        errrepass.style.display = "block";
+        valid = false;
+    }
+    else if (pass !== repass) {
+        errrepass.innerHTML = "Passwords do not match!";
+        errrepass.style.display = "block";
+        valid = false;
+    }
+    else {
+        errrepass.style.display = "none";
+    }
+
+    // Stop if validation failed
+    if (!valid) return;
+
+    // Get existing users
+    let users = JSON.parse(localStorage.getItem("userDetail")) || [];
+
+    // Check if email already exists
+    if (users.some(user => user.email === email)) {
+        erremail.innerHTML = "Email already exists!";
+        erremail.style.display = "block";
+        return;
+    }
+
+    // Save user
+    let newUser = {
+        id: Date.now(),
+        name: uname,
+        email: email,
+        password: pass,
+        role: "user",
+        timestamp: Date.now()
+    };
+
+    users.push(newUser);
+    localStorage.setItem("userDetail", JSON.stringify(users));
+
+    alert("Registration Successful!");
+    document.querySelector("form").reset();
 }
 
-function getUsers() {
-  return JSON.parse(localStorage.getItem("userDetail")) || [];
-}
-
-function saveUsers() {
-  localStorage.setItem("userDetail", JSON.stringify(users));
-}
-users=getUsers();
-function register(){
-   let err=errormsesage();
- 
- 
-        let newUser={
-            id : Date.now(),
-            name : uname,
-            email: email,
-            password: repass,
-            role: "user",
-            timestamp: Date.now().toString()
-
-        }
-            users.push(newUser);
-           saveUsers();
-
-        localStorage.setItem("userDetail", JSON.stringify(users));
-        
-}
 
 
 * {
@@ -216,4 +224,28 @@ h1 {
 }
 
 
+function login() {
+    let email = document.querySelector(".email").value;
+    let pass = document.querySelector(".pass").value;
+
+    let users = JSON.parse(localStorage.getItem("userDetail")) || [];
+
+    let user = users.find(u => u.email === email && u.password === pass);
+
+    if (!user) {
+        alert("Invalid credentials!");
+        return;
+    }
+
+    // Save login time
+    user.lastLogin = Date.now();
+
+    // Save active user
+    localStorage.setItem("activeUser", JSON.stringify(user));
+
+    // Update userDetail
+    localStorage.setItem("userDetail", JSON.stringify(users));
+
+    alert("Login Successful!");
+}
 
