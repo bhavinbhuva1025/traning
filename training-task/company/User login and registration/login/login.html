@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>SignIn page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+	<div class="main-login">
+		<div class="main-logininfo">
+			<h1>Login</h1>
+
+			<div class="login-top">
+				<form onsubmit="login(event)">
+					
+					<input class="e-mail" type="email" name="email" placeholder="Email">
+					<p id="email-error" class="error"></p>
+
+					<input class="text" type="password" name="password" placeholder="Password">
+					<p id="pass-error" class="error"></p>
+
+					<p><a href="../registration/registration.html">Back to Register?</a></p>
+
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="login.js"></script>
+</body>
+</html>
